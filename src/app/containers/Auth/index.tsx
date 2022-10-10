@@ -8,6 +8,7 @@ const authTest = {
   email: "emanuel@email.com",
   password: "sabroso1234",
 };
+
 const Authentication: React.FC = () => {
   const authenticationCache = useAppSelector(authenticationState);
   const dispatch = useAppDispatch();

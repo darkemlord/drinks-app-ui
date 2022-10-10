@@ -8,8 +8,15 @@ type LoginAuthenticationParams = {
   password: string;
 };
 
+export type AuthenticatioResponse = {
+  exp: string;
+  token: string;
+  user_id: number;
+  username: string;
+};
+
 export const getAuthInfoAsUser = createAsyncThunk<
-  any,
+  AuthenticatioResponse,
   LoginAuthenticationParams,
   { state: RootState; rejectValue: any; rejectedMeta: void }
 >("auth/login", async (params, { rejectWithValue }) => {

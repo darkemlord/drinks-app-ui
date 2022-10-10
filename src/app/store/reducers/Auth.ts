@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../store";
-import { getAuthInfoAsUser } from "../actions/Auth";
+import { AuthenticatioResponse, getAuthInfoAsUser } from "../actions/Auth";
 
 export enum ReduxState {
   Idle = "idle",
@@ -12,7 +12,7 @@ export enum ReduxState {
 export interface AuthLoginState {
   fetch: ReduxState;
   fetchError: string | null;
-  userInfo: any;
+  userInfo?: AuthenticatioResponse;
 }
 
 const initialState: AuthLoginState = {
