@@ -3,7 +3,7 @@ import axios from "axios";
 
 const fetchAuth = async () => {
   axios
-    .get("/auth/login")
+    .get("http://localhost:3000/auth/login")
     .then((response) => {
       return response.data;
     })
