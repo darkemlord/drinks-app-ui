@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 import { getAuthInfoAsUser } from "../../store/actions/Auth";
@@ -11,8 +12,6 @@ const authTest = {
 const Authentication: React.FC = () => {
   const authenticationCache = useAppSelector(authenticationState);
   const dispatch = useAppDispatch();
-
-  console.log(authenticationCache);
 
   const handleButtonClick = () => {
     dispatch(getAuthInfoAsUser(authTest));

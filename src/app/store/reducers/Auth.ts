@@ -27,7 +27,7 @@ const authenticationSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getAuthInfoAsUser.pending, (state, _action) => {
+      .addCase(getAuthInfoAsUser.pending, (state) => {
         return {
           ...state,
           fetch: ReduxState.Pending,
@@ -35,7 +35,6 @@ const authenticationSlice = createSlice({
       })
       .addCase(getAuthInfoAsUser.fulfilled, (state, action) => {
         const { payload } = action;
-        console.log(action);
         return {
           ...state,
           fetch: ReduxState.Fulfilled,

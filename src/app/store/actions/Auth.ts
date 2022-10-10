@@ -7,8 +7,6 @@ type LoginAuthenticationParams = {
   password: string;
 };
 
-console.log("hello");
-
 export const getAuthInfoAsUser = createAsyncThunk(
   "auth/login",
   async (params: LoginAuthenticationParams) => {
