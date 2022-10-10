@@ -11,7 +11,7 @@ export enum ReduxState {
 
 export interface AuthLoginState {
   fetch: ReduxState;
-  fetchError: any;
+  fetchError: string | null;
   userInfo: any;
 }
 
@@ -42,10 +42,11 @@ const authenticationSlice = createSlice({
         };
       })
       .addCase(getAuthInfoAsUser.rejected, (state, action) => {
+        const { payload } = action;
         return {
           ...state,
           fetch: ReduxState.Rejected,
-          fetchError: action.payload,
+          fetchError: payload.response.data.error,
         };
       });
   },
