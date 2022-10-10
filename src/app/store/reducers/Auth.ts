@@ -35,6 +35,7 @@ const authenticationSlice = createSlice({
       })
       .addCase(getAuthInfoAsUser.fulfilled, (state, action) => {
         const { payload } = action;
+        console.log(action);
         return {
           ...state,
           fetch: ReduxState.Fulfilled,

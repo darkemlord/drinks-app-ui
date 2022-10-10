@@ -7,10 +7,11 @@ const Authentication: React.FC = () => {
   const authenticationCache = useAppSelector(authenticationState);
   const dispatch = useAppDispatch();
 
+  console.log(authenticationCache);
+
   const handleButtonClick = () => {
     dispatch(getAuthInfoAsUser());
   };
-  console.log(authenticationCache);
 
   return (
     <div>
