@@ -10,16 +10,13 @@ type LoginAuthenticationParams = {
 
 export const getAuthInfoAsUser = createAsyncThunk<
   any,
-  any,
+  LoginAuthenticationParams,
   { state: RootState; rejectValue: any; rejectedMeta: void }
->(
-  "auth/login",
-  async (params: LoginAuthenticationParams, { rejectWithValue }) => {
-    try {
-      const response = await axios.post(`${URL}/auth/login`, params);
-      return response.data;
-    } catch (error) {
-      return rejectWithValue(error);
-    }
+>("auth/login", async (params, { rejectWithValue }) => {
+  try {
+    const response = await axios.post(`${URL}/auth/login`, params);
+    return response.data;
+  } catch (error) {
+    return rejectWithValue(error);
   }
-);
+});
